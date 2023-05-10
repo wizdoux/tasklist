@@ -1,32 +1,14 @@
-// Definindo uma chave para o armazenamento no localStorage
-const STORAGE_KEY  = "Listadetarefas"
-
-let Listadetarefa = {
-  data: [
-  { desc: "Pagar contas" }, 
-  { desc: "Programar aquela lista de tarefas" }, 
-  { desc: "Comprar salgados" },
-  { desc: "Abastecer o carro" }, 
-  { desc: "Fazer o trabalho da facul" }
- ]
-};
-
-// Função para carregar os dados no localStorage, caso adicione
-if (localStorage.getItem(STORAGE_KEY)) {
-  Listadetarefa = JSON.parse(localStorage.getItem(STORAGE_KEY));
-}
-
-// Função para saçvar os dados no navegador/localStorage
-function save() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(Listadetarefa));
-}
+const data = [
+  { desc: "Pagar contas" }, { desc: "Programar aquela lista de tarefas" }, { desc: "Comprar salgados" },
+  { desc: "Abastecer o carro" }, { desc: "Fazer o trabalho da facul" }
+];
 
 function carregarLista() {
-  for (var i = 0; i < Listadetarefa.data.length; i++) {
+  for (var i = 0; i < data.length; i++) {
     document.querySelector("#myUL").innerHTML +=
       ` 
     <li>
-      ${Listadetarefa.data[i].desc} 
+      ${data[i].desc} 
       <button onclick="remover()" class="close">
         <i class="fa-regular fa-trash-can"></i>
       </button>
@@ -37,9 +19,7 @@ function carregarLista() {
 
 function adicionar() {
   var inputValue = document.getElementById("myInput").value;
-  if (inputValue != '') { 
-    Listadetarefa.data.push({ desc: inputValue});
-    save();
+  if (inputValue != '') {
     document.querySelector("#myUL").innerHTML +=
       ` 
     <li>
@@ -58,12 +38,6 @@ function remover() {
     close[i].onclick = function () {
       var div = this.parentElement;
       div.style.display = "none";
-      var taskIndex = Array.prototype.indexOf.call(
-        document.querySelectorAll("#myUL li"),
-        div
-      );
-      Listadetarefa.data.splice(taskIndex, 1);
-      save();
     }
   }
 }
