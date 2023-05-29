@@ -1,6 +1,6 @@
 const data = [
-  { desc: "Pagar contas" }, { desc: "Programar aquela lista de tarefas" }, { desc: "Comprar salgados" },
-  { desc: "Abastecer o carro" }, { desc: "Fazer o trabalho da facul" }
+  // { desc: "Pagar contas" }, { desc: "Programar aquela lista de tarefas" }, { desc: "Comprar salgados" },
+  // { desc: "Abastecer o carro" }, { desc: "Fazer o trabalho da facul" }
 ];
 
 function carregarLista() {
