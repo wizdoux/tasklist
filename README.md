@@ -5,8 +5,7 @@ Este é um simples aplicativo de lista de tarefas desenvolvido em JavaScript.
 ## Funcionalidades
 
 - Adicionar novas tarefas
-- Marcar tarefas como concluídas
-- Excluir tarefas da lista
+- Excluir tarefas concluídas
 
 ## Tecnologias Utilizadas
 
